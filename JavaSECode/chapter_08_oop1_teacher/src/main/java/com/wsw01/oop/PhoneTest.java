@@ -1,5 +1,7 @@
 package com.wsw01.oop;
 
+import java.util.Scanner;
+
 /**
  * @author loriyuhv
  * @date 2025/8/9
@@ -7,6 +9,10 @@ package com.wsw01.oop;
  */
 public class PhoneTest {
     public static void main(String[] args) {
+        // 复习：数据类型 变量名 = 变量值
+        String string = new Scanner(System.in).nextLine();
+        System.out.println(string);
+
         // 创建Phone的对象
         Phone phone = new Phone();
 
