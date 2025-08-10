@@ -7,9 +7,10 @@ package com.wsw02.memory;
  */
 public class PersonTest {
     public static void main(String[] args) {
-        // 创建第一个对象
+        // 创建对象、类的实例化
         Person person = new Person();
 
+        // 通过对象调用属性和方法
         person.name = "Jerry";
         person.age = 18;
 

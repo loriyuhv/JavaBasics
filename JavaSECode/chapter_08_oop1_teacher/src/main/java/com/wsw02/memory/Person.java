@@ -6,6 +6,7 @@ package com.wsw02.memory;
  * @description Person类
  */
 public class Person {
+    // 属性
     String name;
     int age;
     char gender;
