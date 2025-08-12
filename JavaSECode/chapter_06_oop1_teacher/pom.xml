@@ -9,7 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <artifactId>chapter_08_oop1</artifactId>
+    <artifactId>chapter_06_oop1_teacher</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>chapter_08_oop1_teacher</module>
+        <module>chapter_06_oop1_teacher</module>
+        <module>chapter_07_oop2</module>
+        <module>chapter_08_oop2_teacher</module>
     </modules>
 
     <properties>
