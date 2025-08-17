@@ -1,0 +1,2 @@
+1）创建一个ArrayList集合对象，并指定泛型为<Integer>
+
