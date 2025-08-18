@@ -15,6 +15,8 @@
         <module>chapter_05_array_teacher</module>
         <module>chapter_08_oop3_teacher</module>
         <module>chapter_13_generic_teacher</module>
+        <module>chapter_17_reflect_teacher</module>
+        <module>chapter_17_reflect</module>
     </modules>
 
     <properties>
