@@ -36,6 +36,21 @@ public class ClassTest {
 
     @Test
     public void test2() {
-        Class<String[]> stringClass = String[].class;
+        Class<Object> c1 = Object.class;
+        Class<Comparable> c2 = Comparable.class;
+        Class<String[]> c3 = String[].class;
+        Class<int[][]> c4 = int[][].class;
+        // Class c5 = ElementType.class;
+        Class<Override> c6 = Override.class;
+        Class<Integer> c7 = int.class;
+        Class<Void> c8 = void.class;
+        Class<Class> c9 = Class.class;
+
+        int[] a = new int[10];
+        int[] b = new int[100];
+        Class<? extends int[]> c10 = a.getClass();
+        Class<? extends int[]> c11 = b.getClass();
+        // 只要元素类型与维度一样，就是同一个Class
+        System.out.println(c10 == c11);
     }
 }

@@ -24,3 +24,44 @@ Class clazz3 = Comparable.class;
     5）annotation：注解@interface
     6）primitive type：基本数据类型
     7）void
+
+5. 类的加载过程（了解）
+过程1：类的装载（loading）
+==> 将类的class文件读入内存，并为之创建一个java.lang.Class对象。此过程由
+类加载器完成
+
+过程2：链接（linking）
+==>验证Verify：确保加载的类信息符合JVM规范，例如：以cafebabe开头，没有安全
+方面的问题。
+==>准备Prepare：正式为类变量（static）分配内存并`设置类变量默认初始值`的阶段，
+这些内存都将在方法区中进行分配。
+==>解析Resolve：虚拟机常量池内的符号引用（常量名）替换为直接引用（地址）的过程。
+
+过程3：初始化（Initialization）
+==>执行类构造器<clinit>()方法的过程。类构造器<clinit>()方法是由编译器自动收集类
+中所有类变量的赋值动作和静态代码块中的语句合并产生的。（类构造器是构造类信息的，
+不是构造该类对象的构造器）。
+==>当初始化一个类的时候，如果发现其父类还没有进行初始化，则需要先触发其父类的初始化。
+==>虚拟机会保证一个类的<clinit>()方法在多线程环境中被正确加锁和同步。
+
+5. 关于类的加载器（了解，JDK8版本为例）
+5.1 作用：负责类的加载，并对应一个Class的实例。
+5.2 分类（分为两种）：
+==> BootstrapClassLoader：引导类加载器、启动类加载器
+    =>使用C/C++语言编写的，不能通过Java代码获取其实例
+    =>负责加载Java的核心类库（JAVA_HOME/jre/lib/rt.jar或sun.boot.class.path
+        路径下的内容。
+==> 继承于ClassLoader的类加载器
+    => ExtensionClassLoader：扩展类加载器
+        > 负责加载从java.ext.dirs系统属性所指定的目录中加载类库，或从JDK的安装目录的jre/lib/ext子目录下加载类库。如果用户创建的JAR放在此目录下，也会自动由扩展类加载器加载。
+    => SystemClassLoader/ApplicationClassLoader：系统类加载器、应用程序类加载器
+        > 我们自定义的类，默认使用的类的加载器
+    => 用户自定义类加载器
+        > 实现应用的隔离（同一个类在一个应用程序中可以加载多份）；数据的加密。
+
+5.3 以上类的加载器是否存在继承关系？No！
+双亲委派机制  ExtensionClassLoader 与 ApplicationClassLoader
+
+6. （掌握）使用类的加载器获取流，并读取配置文件信息
+
+
