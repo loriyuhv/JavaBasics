@@ -1,6 +1,5 @@
 package com.wsw02.selfdefine;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 

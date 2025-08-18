@@ -2,8 +2,6 @@ package com.wsw02.selfdefine.exercise01;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-
 /**
  * @author loriyuhv
  * @date 2025/8/18

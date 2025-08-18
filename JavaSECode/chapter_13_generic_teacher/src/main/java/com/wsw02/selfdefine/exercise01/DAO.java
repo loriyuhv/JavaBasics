@@ -1,8 +1,6 @@
 package com.wsw02.selfdefine.exercise01;
 
-import java.sql.Array;
 import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * @author loriyuhv
