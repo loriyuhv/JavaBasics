@@ -51,11 +51,6 @@ public class Person extends Creature<String> implements Comparable<Person> {
         return 0;
     }
 
-    // @Override
-    // public void method() {
-    //
-    // }
-
     public static void showInfo() {
         System.out.println("我是一个人。");
     }
