@@ -20,7 +20,7 @@ public class PersonTest {
         person.eat();
         person.sleep(8);
 
-        // 创建第二个对象
+        // 创建一个Person类的对象
         Person person1 = new Person();
         person1.name = "Jack";
         person1.age = 22;
