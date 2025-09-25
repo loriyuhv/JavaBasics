@@ -1,6 +1,11 @@
 package com.test;
 
+import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
+
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author loriyuhv
@@ -9,44 +14,101 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Test20 {
-    /**
-     * 线程1 等待 线程2 的结果
-     * @param args main参数
-     */
-    public static void main(String[] args) {
-        GuardedObject guardedObject = new GuardedObject();
-        Thread t1 = new Thread(() -> {
-            // 等待结果
-            Object object = guardedObject.get(2000);
-            log.debug("t1等待结果：{}", object);
-        }, "t1");
-        t1.start();
+    public static void main(String[] args) throws InterruptedException {
+        for (int i = 0; i < 3; i++) {
+            new People().start();
+        }
 
-        Thread t2 = new Thread(() -> {
-            try {
-                Thread.sleep(4000);
-            } catch (InterruptedException e) {
-                log.error(e.getMessage());
-            }
-            log.debug("t2获取结果");
-            guardedObject.complete(new Object());
-        }, "t2");
-        t2.start();
+        // Thread.sleep(1000);
+        // for (Integer id : Mailboxes.getIds()) {
+        //     new Postman(id, "mail" + id).start();
+        // }
     }
 }
 
+// 居民类
+@Slf4j
+class People extends Thread {
+    @Override
+    public void run() {
+        // 收信
+        GuardedObject guardedObject = Mailboxes.createGuardedObject();
+        log.debug("开始收信，id：{}", guardedObject.getId());
+        Object mail = guardedObject.getResponse(5000);
+        if (mail != null) {
+            log.debug("收到信了，id：{}，内容：{}", guardedObject.getId(), mail);
+        } else {
+            log.debug("没收到信！");
+        }
+
+    }
+}
+
+// 邮递员类
+@Slf4j
+class Postman extends Thread {
+    private int id;
+    private String mail;
+
+    public Postman(int id, String mail) {
+        this.id = id;
+        this.mail = mail;
+    }
+
+    @Override
+    public void run() {
+        GuardedObject guardedObject = Mailboxes.getGuardedObject(id);
+        log.debug("开始送信 id:{}，内容:{}", id, mail);
+        guardedObject.complete(mail);
+    }
+}
+
+// 邮箱类
+class Mailboxes {
+    private final static Map<Integer, GuardedObject> mailboxes = new Hashtable<>();
+    private static int id = 1;
+
+    // 产生唯一的Id
+    public static synchronized int generateId() {
+        return id++;
+    }
+
+    // 产生GuardedObject对象
+    public static GuardedObject createGuardedObject() {
+        GuardedObject guardedObject = new GuardedObject(generateId());
+        mailboxes.put(guardedObject.getId(), guardedObject);
+        return guardedObject;
+    }
+
+    public static Set<Integer> getIds() {
+        return mailboxes.keySet();
+    }
+
+    // 获取GuardedObject对象
+    public static GuardedObject getGuardedObject(int id) {
+        // mailboxes.get(id); // 根据id(键)返回值，但键还在map中
+        return mailboxes.remove(id); // 根据id(键)返回值，但键不在map中
+    }
+}
 // 增加超时效果
 @Slf4j
+@Getter
 class GuardedObject {
+    // 表示GuardedObject
+    private int id;
     // 结果
     private Object response;
+
+    public GuardedObject(int id) {
+        this.id = id;
+    }
 
     /**
      * 获取结果
      * @param timeout 等待时间
      * @return 结果
      */
-    public Object get(long timeout) {
+    public Object getResponse(long timeout) {
         synchronized (this) {
             // 开始时间
             long start = System.currentTimeMillis();
