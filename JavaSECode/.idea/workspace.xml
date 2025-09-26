@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="feat: IDEA配置文件更改">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" afterDir="false" />
+    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="docs: 更改文档注释">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/PersonTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,7 +99,7 @@
       <workItem from="1758337137077" duration="862000" />
       <workItem from="1758800529318" duration="29000" />
       <workItem from="1758802128135" duration="641000" />
-      <workItem from="1758866336024" duration="1341000" />
+      <workItem from="1758866336024" duration="1907000" />
     </task>
     <task id="LOCAL-00001" summary="feat: IDEA debug使用示例">
       <option name="closed" value="true" />
@@ -125,7 +125,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758867403332</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="docs: 更改文档注释">
+      <option name="closed" value="true" />
+      <created>1758867713420</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1758867713420</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,6 +153,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: IDEA debug使用示例" />
     <MESSAGE value="feat: IDEA配置文件更改" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: IDEA配置文件更改" />
+    <MESSAGE value="docs: 更改文档注释" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 更改文档注释" />
   </component>
 </project>

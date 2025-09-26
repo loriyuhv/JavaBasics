@@ -5,11 +5,11 @@ package com.wsw02.memory;
  * @since 1.0
  * @version 2025/8/28 7:44
  */
-public class ClassTest {
+public class PersonTest {
     public static void main(String[] args) {
         Person jerry = new Person();
         jerry.name = "Jerry";
-        jerry.age = 18;
+        // jerry.age = 18;
         jerry.gender = "male";
 
         Person jack = new Person();
@@ -20,7 +20,8 @@ public class ClassTest {
         jerry.age = 26;
         System.out.println(jack.age);
 
-        Person alice = jerry;
+        Person alice;
+        alice = jerry;
         alice.age = 28;
         System.out.println(alice.age);
         System.out.println(jerry.age);
