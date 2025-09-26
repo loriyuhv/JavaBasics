@@ -2,8 +2,8 @@ package com.wsw02.memory;
 
 /**
  * @author loriyuhv
- * @date 2025/8/28 7:44
- * @description
+ * @since 1.0
+ * @version 2025/8/28 7:44
  */
 public class ClassTest {
     public static void main(String[] args) {

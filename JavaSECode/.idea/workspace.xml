@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="feat: IDEA debug使用示例" />
+    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="feat: IDEA配置文件更改">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +99,7 @@
       <workItem from="1758337137077" duration="862000" />
       <workItem from="1758800529318" duration="29000" />
       <workItem from="1758802128135" duration="641000" />
-      <workItem from="1758866336024" duration="994000" />
+      <workItem from="1758866336024" duration="1341000" />
     </task>
     <task id="LOCAL-00001" summary="feat: IDEA debug使用示例">
       <option name="closed" value="true" />
@@ -114,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758867234606</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: IDEA配置文件更改">
+      <option name="closed" value="true" />
+      <created>1758867403332</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1758867403332</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,6 +144,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: IDEA debug使用示例" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: IDEA debug使用示例" />
+    <MESSAGE value="feat: IDEA配置文件更改" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: IDEA配置文件更改" />
   </component>
 </project>
