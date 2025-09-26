@@ -18,6 +18,7 @@
         <module>chapter_13_generic_teacher</module>
         <module>chapter_17_reflect_teacher</module>
         <module>chapter_17_reflect</module>
+        <module>chapter_04_idea_use</module>
     </modules>
 
     <properties>
