@@ -1,9 +1,11 @@
 package com.wsw.java;
 
 /**
+ * description
+ *
  * @author loriyuhv
- * @date 2025/9/22 10:09
- * @description
+ * @since 1.0
+ * @version 1.0 2025/9/22 10:09
  */
 public class ClinitTest1 {
     static class Father {

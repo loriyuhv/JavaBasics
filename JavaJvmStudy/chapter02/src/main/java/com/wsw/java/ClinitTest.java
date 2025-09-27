@@ -1,9 +1,11 @@
 package com.wsw.java;
 
 /**
+ * description
+ *
  * @author loriyuhv
- * @date 2025/9/22 10:03
- * @description
+ * @since 1.0
+ * @version 2025/9/22 10:03
  */
 public class ClinitTest {
     // 任何一个类声明以后，内部至少存在一个类的构造器
