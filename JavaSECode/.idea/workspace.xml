@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="docs: 更改文档注释">
+    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="docs: 优化代码">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/ClassTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_06_oop1/src/main/java/com/wsw02/memory/PersonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/chapter_04_idea_use/src/main/java/com/wsw/Debug01.java" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_04_idea_use/src/main/java/com/wsw/Debug01.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,12 +22,12 @@
     &quot;assignee&quot;: &quot;loriyuhv&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/loriyuhv/JavaBasics.git",
-    "accountId": "d91586fb-cb66-4d48-995f-4df34d183278"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/loriyuhv/JavaBasics.git&quot;,
+    &quot;accountId&quot;: &quot;d91586fb-cb66-4d48-995f-4df34d183278&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -68,10 +68,10 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "advanced.settings",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,7 +99,10 @@
       <workItem from="1758337137077" duration="862000" />
       <workItem from="1758800529318" duration="29000" />
       <workItem from="1758802128135" duration="641000" />
-      <workItem from="1758866336024" duration="1907000" />
+      <workItem from="1758866336024" duration="1956000" />
+      <workItem from="1758868319204" duration="25000" />
+      <workItem from="1758868386372" duration="162000" />
+      <workItem from="1758947575189" duration="1344000" />
     </task>
     <task id="LOCAL-00001" summary="feat: IDEA debug使用示例">
       <option name="closed" value="true" />
@@ -133,7 +136,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758867713420</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="docs: 优化代码">
+      <option name="closed" value="true" />
+      <created>1758868259176</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1758868259176</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,6 +165,11 @@
     <MESSAGE value="feat: IDEA debug使用示例" />
     <MESSAGE value="feat: IDEA配置文件更改" />
     <MESSAGE value="docs: 更改文档注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: 更改文档注释" />
+    <MESSAGE value="docs: 优化代码" />
+    <option name="LAST_COMMIT_MESSAGE" value="docs: 优化代码" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
