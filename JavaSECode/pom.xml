@@ -9,16 +9,16 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
+        <module>chapter_04_idea_use</module>
+        <module>chapter_05_array_teacher</module>
         <module>chapter_06_oop1</module>
         <module>chapter_06_oop1_teacher</module>
         <module>chapter_07_oop2</module>
         <module>chapter_08_oop2_teacher</module>
-        <module>chapter_05_array_teacher</module>
         <module>chapter_08_oop3_teacher</module>
         <module>chapter_13_generic_teacher</module>
         <module>chapter_17_reflect_teacher</module>
         <module>chapter_17_reflect</module>
-        <module>chapter_04_idea_use</module>
     </modules>
 
     <properties>

@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="docs: 优化代码">
-      <change afterPath="$PROJECT_DIR$/chapter_08_oop2_teacher/src/main/java/com/wsw07/object/07-Object类及常用方法的使用" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/chapter_08_oop2_teacher/src/main/java/com/wsw07/object/CloneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="c1ed0dde-a474-4cb1-8b23-85eae198d96c" name="Changes" comment="feat: Object类及常用方法">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaJucStudy/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../JavaJvmStudy/.idea/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/chapter_08_oop2_teacher/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/chapter_08_oop2_teacher/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +73,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "F:/Repositories/JavaBasics/JavaSECode/chapter_04_idea_use/src/main/java",
+    "last_opened_file_path": "F:/Repositories/JavaBasics",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -83,7 +82,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.29425287",
-    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -135,7 +134,8 @@
       <workItem from="1758868319204" duration="25000" />
       <workItem from="1758868386372" duration="162000" />
       <workItem from="1758947575189" duration="1949000" />
-      <workItem from="1758951884105" duration="2801000" />
+      <workItem from="1758951884105" duration="4034000" />
+      <workItem from="1758957917005" duration="3859000" />
     </task>
     <task id="LOCAL-00001" summary="feat: IDEA debug使用示例">
       <option name="closed" value="true" />
@@ -185,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1758951544155</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat: Object类及常用方法">
+      <option name="closed" value="true" />
+      <created>1758955418410</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1758955418410</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -207,7 +215,8 @@
     <MESSAGE value="feat: IDEA配置文件更改" />
     <MESSAGE value="docs: 更改文档注释" />
     <MESSAGE value="docs: 优化代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="docs: 优化代码" />
+    <MESSAGE value="feat: Object类及常用方法" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: Object类及常用方法" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
