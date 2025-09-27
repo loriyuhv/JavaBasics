@@ -1,9 +1,11 @@
 package com.wsw.java;
 
 /**
+ * 反编译指令：javap -verbose .\PCRegisterTest.class
+ *
  * @author loriyuhv
- * @date 2025/9/23 5:55
- * @description 反编译指令：javap -verbose .\PCRegisterTest.class
+ * @since 1.0
+ * @version 1.0 2025/9/23 5:55
  */
 public class PCRegisterTest {
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class PCRegisterTest {
 
         String s = "abc";
 
+        System.out.println(s);
         System.out.println(i);
         System.out.println(k);
     }
