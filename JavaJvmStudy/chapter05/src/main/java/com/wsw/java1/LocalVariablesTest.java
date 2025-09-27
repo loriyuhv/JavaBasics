@@ -4,8 +4,8 @@ import java.util.Date;
 
 /**
  * @author loriyuhv
- * @date 2025/9/23 8:01
- * @description
+ * @since 1.0
+ * @version 1.0 2025/9/23 8:01
  */
 public class LocalVariablesTest {
     private int count = 0;

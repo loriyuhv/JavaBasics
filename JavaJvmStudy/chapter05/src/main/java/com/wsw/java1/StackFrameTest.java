@@ -1,11 +1,12 @@
 package com.wsw.java1;
 
 /**
- * @author loriyuhv
- * @date 2025/9/23 7:13
- * @description 方法的结束分两种：
+ * 方法的结束分两种：
  * 1）正常结束，以return为代表
  * 2）方法执行中出现未捕获处理的异常，以抛出异常的方式结束
+ * @author loriyuhv
+ * @since 1.0
+ * @version 1.0 2025/9/23 7:13
  */
 public class StackFrameTest {
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class StackFrameTest {
             StackFrameTest test = new StackFrameTest();
             test.method1();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException();
         }
         System.out.println("main()正常结束...");
     }

@@ -2,8 +2,8 @@ package com.wsw.java2;
 
 /**
  * @author loriyuhv
- * @date 2025/9/23 14:48
- * @description
+ * @since 1.0
+ * @version 1.0 2025/9/23 14:48
  */
 public class Son extends Father {
     public Son() {

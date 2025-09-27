@@ -1,9 +1,11 @@
 package com.wsw.java2;
 
 /**
+ * 早期绑定和晚期绑定示例
+ *
  * @author loriyuhv
- * @date 2025/9/23 14:11
- * @description 早期绑定和晚期绑定示例
+ * @since 1.0
+ * @version 1.0 2025/9/23 14:11
  */
 class Animal {
     public void eat() {

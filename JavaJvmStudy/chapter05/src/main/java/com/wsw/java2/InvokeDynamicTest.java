@@ -1,9 +1,11 @@
 package com.wsw.java2;
 
 /**
+ * invokedynamic
+ *
  * @author loriyuhv
- * @date 2025/9/23 16:06
- * @description invokedynamic
+ * @since 1.0
+ * @version 1.0 2025/9/23 16:06
  */
 @FunctionalInterface
 interface Calculator {

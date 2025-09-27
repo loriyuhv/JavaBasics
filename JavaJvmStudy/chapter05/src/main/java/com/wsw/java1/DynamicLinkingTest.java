@@ -2,8 +2,8 @@ package com.wsw.java1;
 
 /**
  * @author loriyuhv
- * @date 2025/9/23 13:37
- * @description
+ * @since 1.0
+ * @version 1.0 2025/9/23 13:37
  */
 public class DynamicLinkingTest {
     int number = 10;

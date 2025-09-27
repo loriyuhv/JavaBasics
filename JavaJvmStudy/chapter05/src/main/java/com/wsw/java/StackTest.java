@@ -2,8 +2,8 @@ package com.wsw.java;
 
 /**
  * @author loriyuhv
- * @date 2025/9/23 6:46
- * @description
+ * @since 1.0
+ * @version 1.0 2025/9/23 6:46
  */
 public class StackTest {
     public static void main(String[] args) {
