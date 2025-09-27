@@ -6,9 +6,10 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
 /**
+ * description （熟悉）获取运行时类的内部结构2：父类、接口、包、带泛型的类、父类的泛型等
+ *
  * @author loriyuhv
- * @date 2025/8/20
- * @description （熟悉）获取运行时类的内部结构2：父类、接口、包、带泛型的类、父类的泛型等
+ * @version 2025/8/20
  */
 public class OtherTest {
     // 1. 获取运行时类的父类

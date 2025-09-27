@@ -7,9 +7,10 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
+ * description
+ *
  * @author loriyuhv
- * @date 2025/8/19
- * @description
+ * @version 2025/8/19
  */
 public class FieldsTest {
     @Test
@@ -59,6 +60,5 @@ public class FieldsTest {
             System.out.print(fieldName);
             System.out.println();
         }
-
     }
 }

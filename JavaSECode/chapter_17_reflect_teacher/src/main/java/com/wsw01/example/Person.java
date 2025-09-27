@@ -3,9 +3,11 @@ package com.wsw01.example;
 import lombok.Data;
 
 /**
+ * description Person
+ *
  * @author loriyuhv
- * @date 2025/8/18
- * @description Person
+ * @since 1.0
+ * @version 2025/8/18
  */
 @Data
 public class Person {

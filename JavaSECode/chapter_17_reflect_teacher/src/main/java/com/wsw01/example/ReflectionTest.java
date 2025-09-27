@@ -8,9 +8,11 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 /**
+ * description 反射测试
+ *
  * @author loriyuhv
- * @date 2025/8/18
- * @description 反射测试
+ * @since 1.0
+ * @version  2025/8/18
  */
 public class ReflectionTest {
     /**
@@ -57,8 +59,7 @@ public class ReflectionTest {
 
     /**
      * 出了Person类之后，就不能直接调用Person类中声明的private权限修饰的结构（
-     * 属性、方法和构造器）。但是，我们可以通过反射的方式，调用Person类中私有
-     * 结构。
+     * 属性、方法和构造器）。但是，我们可以通过反射的方式，调用Person类中私有结构。
      */
     @Test
     public void test3() throws Exception {

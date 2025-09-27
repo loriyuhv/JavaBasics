@@ -4,9 +4,11 @@ import com.wsw03.reflect_apply.data.Person;
 import org.junit.jupiter.api.Test;
 
 /**
+ * description 反射的应用一：创建运行时类对象
+ *
  * @author loriyuhv
- * @date 2025/8/19
- * @description 反射的应用一：创建运行时类对象
+ * @since 1.0
+ * @version 2025/8/19
  */
 public class NewInstanceTest {
     @Test

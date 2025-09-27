@@ -3,9 +3,10 @@ package com.wsw02._class;
 import lombok.Data;
 
 /**
+ * description User
+ *
  * @author loriyuhv
- * @date 2025/8/18
- * @description User
+ * @version 2025/8/18
  */
 @Data
 public class User {
@@ -26,6 +27,4 @@ public class User {
     public User(String name, int age) {}
 
     // 方法
-
-
 }

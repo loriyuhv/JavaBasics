@@ -1,9 +1,10 @@
 package com.wsw03.reflect_apply.data;
 
 /**
+ * description Creature
+ *
  * @author loriyuhv
- * @date 2025/8/19
- * @description Creature
+ * @version 2025/8/19
  */
 public class Creature<T> {
     boolean gender;

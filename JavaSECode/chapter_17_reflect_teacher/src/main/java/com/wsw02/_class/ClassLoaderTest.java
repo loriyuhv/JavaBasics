@@ -7,8 +7,8 @@ import java.util.Properties;
 
 /**
  * @author loriyuhv
- * @date 2025/8/18
- * @description
+ * @since 1.0
+ * @version 2025/8/18
  */
 public class ClassLoaderTest {
     @Test

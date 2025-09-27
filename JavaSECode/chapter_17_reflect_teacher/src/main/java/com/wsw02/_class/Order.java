@@ -1,9 +1,11 @@
 package com.wsw02._class;
 
 /**
+ * description
+ *
  * @author loriyuhv
- * @date 2025/8/18
- * @description
+ * @since 1.0
+ * @version 2025/8/18
  */
 public class Order {
     // static int orderDoc;

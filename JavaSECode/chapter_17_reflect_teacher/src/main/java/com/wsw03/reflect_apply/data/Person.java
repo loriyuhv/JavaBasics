@@ -1,11 +1,11 @@
 package com.wsw03.reflect_apply.data;
 
-import lombok.Data;
 
 /**
+ * description Person
+ *
  * @author loriyuhv
- * @date 2025/8/19
- * @description Person
+ * @version 2025/8/19
  */
 
 @MyAnnotation("t_persons")

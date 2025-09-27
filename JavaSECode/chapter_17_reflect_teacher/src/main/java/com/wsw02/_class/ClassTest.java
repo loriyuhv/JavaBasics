@@ -3,9 +3,11 @@ package com.wsw02._class;
 import org.junit.jupiter.api.Test;
 
 /**
+ * description 获取Class实例
+ *
  * @author loriyuhv
- * @date 2025/8/18
- * @description 获取Class实例
+ * @since 1.0
+ * @version 2025/8/18
  */
 public class ClassTest {
     /**
