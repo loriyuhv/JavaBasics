@@ -1,9 +1,10 @@
 package com.wsw02.two;
 
 /**
+ * description 数组元素的默认初始化值测试
+ *
  * @author loriyuhv
- * @date 2025/8/15
- * @description 数组元素的默认初始化值测试
+ * @version 2025/8/15
  */
 public class TwoArrayTest2 {
     public static void main(String[] args) {

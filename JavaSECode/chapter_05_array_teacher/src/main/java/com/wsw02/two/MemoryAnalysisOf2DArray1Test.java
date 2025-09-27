@@ -1,9 +1,11 @@
 package com.wsw02.two;
 
 /**
+ * description 二维数组内存解析
+ *
  * @author loriyuhv
- * @date 2025/8/15
- * @description 二维数组内存解析
+ * @since 1.0
+ * @version  2025/8/15
  */
 public class MemoryAnalysisOf2DArray1Test {
     public static void main(String[] args) {

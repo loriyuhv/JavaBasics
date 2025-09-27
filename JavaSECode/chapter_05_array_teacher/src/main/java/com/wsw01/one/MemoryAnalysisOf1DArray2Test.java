@@ -1,9 +1,11 @@
 package com.wsw01.one;
 
 /**
+ * description 一维数组测试
+ *
  * @author loriyuhv
- * @date 2025/8/15
- * @description 一维数组测试
+ * @since 1.0
+ * @version  2025/8/15
  */
 public class MemoryAnalysisOf1DArray2Test {
     public static void main(String[] args) {

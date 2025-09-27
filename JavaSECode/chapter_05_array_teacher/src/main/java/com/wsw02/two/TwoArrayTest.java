@@ -3,9 +3,10 @@ package com.wsw02.two;
 import java.util.Arrays;
 
 /**
+ * description 二维数组的使用
+ *
  * @author loriyuhv
- * @date 2025/8/15
- * @description 二维数组的使用
+ * @version  2025/8/15
  */
 public class TwoArrayTest {
     public static void main(String[] args) {
@@ -66,9 +67,9 @@ public class TwoArrayTest {
         // }
 
         // 方式二
-        for (int[] ints : arr1) {
-            for (int anInt : ints) {
-                System.out.print(anInt + " ");
+        for (int[] arr : arr1) {
+            for (int a : arr) {
+                System.out.print(a + " ");
             }
             System.out.println();
         }
