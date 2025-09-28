@@ -1,6 +1,7 @@
 package com.wsw.java;
 
 /**
+ * -Xms10m -Xmx10m -XX:+PrintGCDetails
  * @author loriyuhv
  * @version 1.0 2025/9/28 10:20
  * @since 1.0

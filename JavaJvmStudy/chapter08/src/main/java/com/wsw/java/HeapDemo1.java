@@ -1,7 +1,7 @@
 package com.wsw.java;
 
 /**
- * -Xms10m -Xmx10m
+ * -Xms20m -Xmx20m
  *
  * @author loriyuhv
  * @version 1.0 2025/9/28 10:23
