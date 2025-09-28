@@ -8,9 +8,11 @@ import java.util.Map;
 import java.util.Set;
 
 /**
+ * 同步模式之保护性暂停
+ *
  * @author loriyuhv
- * @date 2025/9/25 6:47
- * @description 同步模式之保护性暂停
+ * @version 1.0 2025/9/25 6:47
+ * @since 1.0
  */
 @Slf4j
 public class Test20 {

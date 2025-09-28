@@ -3,10 +3,13 @@ package com.wsw.guarded_suspension.example01;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author loriyuhv
- * @date 2025/9/25 15:56
- * @description 一个线程等待另一个线程的结果
+ * 一个线程等待另一个线程的结果
  * t1线程等待t2线程的结果
+ *
+ * @author loriyuhv
+ * @version 1.0 2025/9/25 15:56
+ * @since 1.0
+ *
  */
 @Slf4j
 public class GuardedSuspensionTest {

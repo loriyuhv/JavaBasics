@@ -4,8 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author loriyuhv
- * @date 2025/9/25 15:52
- * @description
+ * @version 1.0 2025/9/25 15:52
+ * @since 1.0
  */
 @Slf4j
 public class GuardedObject {
