@@ -1,7 +1,7 @@
 package com.wsw.java;
 
-import jdk.internal.org.objectweb.asm.ClassWriter;
-import jdk.internal.org.objectweb.asm.Opcodes;
+import org.objectweb.asm.ClassWriter;
+import org.objectweb.asm.Opcodes;
 
 /**
  * -XX:MetaspaceSize=100m -XX:MaxMetaspaceSize=100m
