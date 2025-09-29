@@ -3,8 +3,8 @@ package com.wsw.guarded_suspension.example01;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 一个线程等待另一个线程的结果
- * t1线程等待t2线程的结果
+ * 同步模式之保护性暂停：一个线程等待另一个线程的结果。
+ * 保护性暂停测试：t1线程等待t2线程的结果
  *
  * @author loriyuhv
  * @version 1.0 2025/9/25 15:56
@@ -13,7 +13,7 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class GuardedSuspensionTest {
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
         GuardedObject guardedObject = new GuardedObject();
         Thread t1 = new Thread(() -> {
             Object response = guardedObject.getResponse();

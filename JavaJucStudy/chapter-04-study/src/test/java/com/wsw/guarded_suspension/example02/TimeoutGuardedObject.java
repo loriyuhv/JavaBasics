@@ -3,9 +3,11 @@ package com.wsw.guarded_suspension.example02;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 超时版
+ *
  * @author loriyuhv
- * @date 2025/9/25 16:08
- * @description 超时版
+ * @version 1.0 2025/9/25 16:08
+ * @since 1.0
  */
 @Slf4j
 public class TimeoutGuardedObject {
@@ -18,14 +20,14 @@ public class TimeoutGuardedObject {
      */
     public Object getResponse(long timeout) {
         synchronized (lock) {
-            // 1）记录最初的时间
+            /* 1）记录最初的时间 */
             long start = System.currentTimeMillis();
-            // 2）记录延迟的时间
+            /* 2）记录延迟的时间 */
             long delay = 0;
 
-            // 条件不满足则等待
+            /* 条件不满足则等待 */
             while (response == null) {
-                // 4）假设timeout 是2000，结果在1000时唤醒了，那么还有1000要等
+                /* 4）假设timeout 是2000，结果在1000时唤醒了，那么还有1000要等 */
                 long waitTime = timeout - delay;
                 if (waitTime <= 0) {
                     log.debug("break!");
@@ -37,7 +39,7 @@ public class TimeoutGuardedObject {
                     log.debug(e.getMessage());
                 }
 
-                // 3）如果提前被唤醒，这时已经经历的时间设置为
+                /* 3）如果提前被唤醒，这时已经经历的时间设置为延迟时间 */
                 delay = System.currentTimeMillis() - start;
                 log.debug("delay: {}", delay);
             }
