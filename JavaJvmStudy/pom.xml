@@ -16,10 +16,12 @@
         <module>chapter09</module>
         <module>chapter10</module>
         <module>chapter11</module>
+        <module>chapter13</module>
     </modules>
 
     <properties>
         <asm.version>9.8</asm.version>
+        <junit.jupiter.version>5.13.4</junit.jupiter.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -31,6 +33,18 @@
                 <groupId>org.ow2.asm</groupId>
                 <artifactId>asm</artifactId>
                 <version>${asm.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${junit.jupiter.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${junit.jupiter.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
