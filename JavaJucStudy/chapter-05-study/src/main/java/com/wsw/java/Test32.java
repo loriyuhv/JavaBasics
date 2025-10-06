@@ -7,11 +7,12 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @author loriyuhv
  * @version 1.0 2025/10/6 9:31
- * @since 1.0
+ * @since 2.0 解决可见性问题 关键性 volatile
  */
 @Slf4j
 public class Test32 {
-    static boolean run = true;
+    // 易变
+    volatile static boolean run = true;
 
     public static void main(String[] args) throws InterruptedException {
         Thread t = new Thread(() -> {
