@@ -12,11 +12,13 @@
         <module>chapter-01-study</module>
         <module>chapter-04-study</module>
         <module>chapter-05-study</module>
+        <module>demo-01-ordering</module>
     </modules>
 
     <properties>
+        <jcstress.version>0.16</jcstress.version>
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
-        <jol-core.version>0.17</jol-core.version>
+        <jol.version>0.17</jol.version>
         <lombok.version>1.18.38</lombok.version>
         <logback.version>1.5.18</logback.version>
         <maven.compiler.source>17</maven.compiler.source>
@@ -42,13 +44,18 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit-jupiter.version}</version>
-                <scope>test</scope>
             </dependency>
 
             <dependency>
                 <groupId>org.openjdk.jol</groupId>
                 <artifactId>jol-core</artifactId>
-                <version>${jol-core.version}</version>
+                <version>${jol.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.openjdk.jcstress</groupId>
+                <artifactId>jcstress-core</artifactId>
+                <version>${jcstress.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
