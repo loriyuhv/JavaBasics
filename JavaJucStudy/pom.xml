@@ -11,6 +11,7 @@
     <modules>
         <module>chapter-01-study</module>
         <module>chapter-04-study</module>
+        <module>chapter-05-study</module>
     </modules>
 
     <properties>
