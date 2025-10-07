@@ -2,8 +2,8 @@ package com.wsw01;
 
 /**
  * @author loriyuhv
- * @date 2025/9/20 20:10
- * @description
+ * @version 2025/9/20 20:10
+ * @since 1.0
  */
 public class ThreadTest {
     public static void main(String[] args) {

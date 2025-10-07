@@ -2,12 +2,15 @@ package com.wsw02.n3;
 
 /**
  * @author loriyuhv
- * @date 2025/9/21 10:09
- * @description
+ * @version 2025/9/21 10:09
+ * @since 1.0
  */
 public class BFrames {
     public static void main(String[] args) {
-        method1(10);
+        int a = 5;
+        int b = 1;
+        int z = a / b;
+        method1(z);
     }
 
     private static void method1(int x){
