@@ -2,6 +2,7 @@ package com.wsw.java2;
 
 /**
  * String intern()方法效率测试，从空间角度
+ * 结论：对于程序中大量存在的字符串，尤其其中存在很多重复字符串的时候，使用intern()方法可以节省内存空间。
  *
  * @author loriyuhv
  * @version 1.0 2025/10/11 23:11
