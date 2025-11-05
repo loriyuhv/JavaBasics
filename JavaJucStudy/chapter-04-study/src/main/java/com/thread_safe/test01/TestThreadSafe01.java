@@ -16,9 +16,6 @@ public class TestThreadSafe01 {
     public static void main(String[] args) {
         ThreadUnsafe test = new ThreadUnsafe();
         for (int i = 0; i < THREAD_NUMBER; i++) {
-            new Thread(() -> {
-                test.method01(LOOP_NUMBER);
-            }, "Thread-" + (i + 1)).start();
         }
     }
 }
