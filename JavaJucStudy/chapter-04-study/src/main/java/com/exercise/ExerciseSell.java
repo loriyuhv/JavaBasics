@@ -8,6 +8,7 @@ import java.util.Random;
 import java.util.Vector;
 
 /**
+ * 练习：一个共享变量的线程安全问题
  * 测试命令
  * for /L %n in (1,1,100) do java -cp ".;D:\Program Files\Maven\repo\org\projectlombok\lombok\1.18.38\lombok-1.18.38.jar;D:\Program Files\Maven\repo\ch\qos\logback\logback-classic\1.5.20\logback-classic-1.5.20.jar;D:\Program Files\Maven\repo\org\slf4j\slf4j-api\2.0.17\slf4j-api-2.0.17.jar;D:\Program Files\Maven\repo\ch\qos\logback\logback-core\1.5.20\logback-core-1.5.20.jar" com.exercise.ExerciseSell
  * @author loriyuhv
