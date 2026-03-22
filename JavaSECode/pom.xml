@@ -19,6 +19,7 @@
         <module>chapter_13_generic_teacher</module>
         <module>chapter_17_reflect_teacher</module>
         <module>chapter_17_reflect</module>
+        <module>chapter_99_new_feature_teacher</module>
     </modules>
 
     <properties>
