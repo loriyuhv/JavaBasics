@@ -20,9 +20,7 @@ public class TestPool {
         ThreadPool threadPool = new ThreadPool(2, 1000, TimeUnit.MILLISECONDS, 10);
         for (int i = 0; i < 5; i++) {
             int j = i;
-            threadPool.execute(() -> {
-                log.debug("{}", j);
-            });
+            threadPool.execute(() -> log.debug("{}", j));
         }
     }
 }
@@ -30,18 +28,18 @@ public class TestPool {
 @Slf4j
 class ThreadPool {
     /* 任务队列 */
-    private BlockingQueue<Runnable> taskQueue;
+    private final BlockingQueue<Runnable> taskQueue;
 
     /* 线程集合 */
-    private HashSet<Worker> workers = new HashSet<>();
+    private final HashSet<Worker> workers = new HashSet<>();
 
     /* 核心线程数 */
-    private int coreSize;
+    private final int coreSize;
 
     /* 获取任务的超时时间 */
-    private long timeout;
+    private final long timeout;
 
-    private TimeUnit timeUnit;
+    private final TimeUnit timeUnit;
 
     public ThreadPool(int coreSize, long timeout, TimeUnit timeUnit, int queueCapacity) {
         this.coreSize = coreSize;
@@ -106,19 +104,20 @@ class ThreadPool {
 @Slf4j
 class BlockingQueue<T> {
     /* 1. 任务队列 */
-    private Deque<T> queue = new ArrayDeque<>();
+    // private final Deque<T> queue = new ArrayDeque<>();
+    private final Deque<T> queue = new ArrayDeque<>();
 
     /* 2. 锁 */
-    private ReentrantLock lock = new ReentrantLock();
+    private final ReentrantLock lock = new ReentrantLock();
 
     /* 3. 生产者条件变量 */
-    private Condition fullWaitSet = lock.newCondition();
+    private final Condition fullWaitSet = lock.newCondition();
 
     /* 4. 消费者条件变量 */
-    private Condition emptyWaitSet = lock.newCondition();
+    private final Condition emptyWaitSet = lock.newCondition();
 
     /* 5. 容量 */
-    private int capacity;
+    private final int capacity;
 
     public BlockingQueue(int capacity) {
         this.capacity = capacity;
