@@ -1,5 +1,7 @@
 package com.wsw99.test05;
 
+import java.util.concurrent.Semaphore;
+
 /**
  * @author loriyuhv
  * @version 1.0 2026/4/3 14:08
@@ -7,6 +9,7 @@ package com.wsw99.test05;
  */
 public class ThreadTest {
     static int i;
+    static final Semaphore semaphore = new Semaphore(1);
 
     public static void main(String[] args) throws InterruptedException {
         long start = System.currentTimeMillis();
@@ -29,8 +32,16 @@ public class ThreadTest {
         for (int j = 0; j < number; j++) {
             localSum++;
         }
-        synchronized (Object.class) {
+        // synchronized (Object.class) {
+        //     i += localSum;
+        // }
+        try {
+            semaphore.acquire();
             i += localSum;
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        } finally {
+            semaphore.release();
         }
     }
 }
