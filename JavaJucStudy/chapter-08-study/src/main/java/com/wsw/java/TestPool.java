@@ -141,20 +141,29 @@ class ThreadPool {
 
 @Slf4j(topic = "c.BlockingQueue")
 class BlockingQueue<T> {
-    /* 1. 任务队列 */
-    // private final Deque<T> queue = new ArrayDeque<>();
+    /**
+     * 任务队列
+     */
     private final Deque<T> queue = new ArrayDeque<>();
 
-    /* 2. 锁 */
+    /**
+     * 锁
+     */
     private final ReentrantLock lock = new ReentrantLock();
 
-    /* 3. 生产者条件变量 */
+    /**
+     * 生产者条件变量
+     */
     private final Condition fullWaitSet = lock.newCondition();
 
-    /* 4. 消费者条件变量 */
+    /**
+     * 消费者条件变量
+     */
     private final Condition emptyWaitSet = lock.newCondition();
 
-    /* 5. 容量 */
+    /**
+     * 容量
+     */
     private final int capacity;
 
     public BlockingQueue(int capacity) {
