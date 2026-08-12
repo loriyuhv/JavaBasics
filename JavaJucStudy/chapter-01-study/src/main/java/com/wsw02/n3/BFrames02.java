@@ -4,8 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author loriyuhv
- * @date 2025/9/21 10:12
- * @description
+ * @version 1.0 2025/9/21 10:12
  */
 @Slf4j
 public class BFrames02 {
