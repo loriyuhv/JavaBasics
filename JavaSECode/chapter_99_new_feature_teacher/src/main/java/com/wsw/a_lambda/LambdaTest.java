@@ -15,7 +15,7 @@ import java.util.function.Consumer;
  * <p>3. Lambda表达式使用：六种情况</p>
  *  <ul>
  *      <li>语法格式1：无参数、无返回值</li>
- *      <li>语法格式2：无参数、无返回值</li>
+ *      <li>语法格式2：Lambda需要一个参数、无返回值</li>
  *      <li>语法格式3：数据类型可以省略，因为可由编译器推断得出，称为“类型推断”</li>
  *      <li>语法格式4：Lambda若只需要一个参数时，参数的小括号可以省略</li>
  *      <li>语法格式5：Lambda需要两个或以上的参数，多条执行语句，并且可以有返回值</li>
@@ -68,7 +68,7 @@ public class LambdaTest {
         r2.run();
     }
 
-    /* 语法格式2：无参数、无返回值 */
+    /* 语法格式2：Lambda需要一个参数、无返回值 */
     @Test
     public void test3() {
         Consumer<String> c1 = new Consumer<String>() {
@@ -80,6 +80,9 @@ public class LambdaTest {
 
         Consumer<String> c2 = (String s) -> System.out.println(s);
         c2.accept("Hello Lambda2");
+
+        Consumer<String> c3 = System.out::println;
+        c3.accept("Hello Lambda3");
     }
 
     /* 语法格式三：数据类型可以省略，因为可由编译器推断得出，称为“类型推断” */
@@ -105,27 +108,41 @@ public class LambdaTest {
     /* 语法格式五：Lambda需要两个或以上的参数，多条执行语句，并且可以有返回值 */
     @Test
     public void test05() {
-        Comparator<Integer> c1 = (o1, o2) -> {
-            System.out.println("o1: " + o1);
-            System.out.println("o2: " + o2);
-            return Integer.compare(o1, o2);
+        Comparator<Integer> c1 = new Comparator<>() {
+            public int compare(Integer o1, Integer o2) {
+                return Integer.compare(o1, o2);
+            }
         };
+        int compare1 = c1.compare(3, 2);
+        System.out.println(compare1);
 
-        int compare2 = c1.compare(2, 3);
+        Comparator<Integer> c2 = (o1, o2) -> Integer.compare(o1, o2);
+        int compare2 = c2.compare(1, 2);
         System.out.println(compare2);
+
+        Comparator<Integer> c3 = Integer::compare;
+        int compare3 = c3.compare(1, 1);
+        System.out.println(compare3);
     }
 
     /* 语法格式六：当Lambda体只有一条语句是，return与大括号若有，都可以省略 */
     @Test
     public void test06() {
         Comparator<Double> c1 = (o1, o2) -> Double.compare(o1, o2);
-        double compare2 = c1.compare(2.0, 3.0);
+        double compare1 = c1.compare(2.0, 3.0);
+        System.out.println(compare1);
+
+        Comparator<Double> c2 = Double::compare;
+        double compare2 = c2.compare(2.0, 3.0);
         System.out.println(compare2);
     }
 
     @Test
     public void test07() {
-        MyInterface i = () -> System.out.println("Hello Lambda");
-        i.method();
+        MyInterface<String> i = (s) -> System.out.println(s);
+        i.method("Hello Lambda");
+
+        MyInterface<Integer> j = System.out::println;
+        j.method(3);
     }
 }

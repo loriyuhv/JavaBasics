@@ -6,6 +6,6 @@ package com.wsw.a_lambda;
  * @since 1.0
  */
 @FunctionalInterface
-public interface MyInterface {
-    void method();
+public interface MyInterface<T> {
+    void method(T t);
 }
