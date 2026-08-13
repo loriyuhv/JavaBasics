@@ -28,7 +28,7 @@ import java.util.function.Consumer;
  * @version 1.0 2026/3/22 10:19
  * @since 1.0
  */
-public class LambdaTest {
+public class TestLambda01 {
     @Test
     public void test() {
         Comparator<Integer> comparator1 = new Comparator<Integer>() {
