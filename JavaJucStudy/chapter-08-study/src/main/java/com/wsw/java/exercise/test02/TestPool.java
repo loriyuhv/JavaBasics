@@ -1,41 +1,49 @@
-package com.wsw.java.exercise;
+package com.wsw.java.exercise.test02;
 
 import lombok.extern.slf4j.Slf4j;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 /**
- * 线程池，队列阻塞获取任务和加入任务示例
- *
+ * 自定一线程池测试入口
+ * 演示简易线程池：核心线程 + 有界阻塞队列 + 核心线程空闲超时销毁模型
  * @author loriyuhv
- * @version 1.0 2026/8/12 18:01
+ * @version 1.0 2026/8/13 10:04
  * @since 1.0
  */
 @Slf4j(topic = "c.TestPool")
-public class TestPool01 {
+public class TestPool {
     public static void main(String[] args) {
-        ThreadPool threadPool = new ThreadPool(2, 3);
-        for (int i = 0; i < 3; i++) {
+        ThreadPool threadPool = new ThreadPool(1, 1000L, TimeUnit.MILLISECONDS, 2);
+
+        for (int i = 0; i < 4; i++) {
             int j = i;
-            threadPool.execute(() -> log.debug("{}", j));
+            threadPool.execute(() -> {
+                try {
+                    Thread.sleep(500L);
+                } catch (InterruptedException e) {
+                    log.debug(e.getMessage(), e);
+                }
+                log.debug("{}", j);
+            });
         }
     }
 }
 
 @Slf4j(topic = "c.ThreadPool")
 class ThreadPool {
-
     /**
      * 任务队列
      */
     private final BlockingQueue<Runnable> taskQueue;
 
     /**
-     * 线程集合
+     * 线程池
      */
     private final HashSet<Worker> workers = new HashSet<>();
 
@@ -44,38 +52,39 @@ class ThreadPool {
      */
     private final int coreSize;
 
-
-    public ThreadPool(int coreSize, int queueCapacity) {
-        this.coreSize = coreSize;
-        this.taskQueue = new BlockingQueue<>(queueCapacity);
-    }
+    /**
+     * 获取任务的超时时间
+     */
+    private final long timeout;
 
     /**
-     * 执行任务
-     * @param task 任务
+     * 时间单位
      */
+    private final TimeUnit timeUnit;
+
+
+    public ThreadPool(int coreSize, long timeout, TimeUnit timeUnit, int queueCapacity) {
+        this.taskQueue = new BlockingQueue<>(queueCapacity);
+        this.coreSize = coreSize;
+        this.timeout = timeout;
+        this.timeUnit = timeUnit;
+    }
+
     public void execute(Runnable task) {
-        // 当任务数没有超过 coreSize 时，直接交给Worker对象执行
-        // 如果任务数超过 coreSize 时，加入任务队列暂存
         synchronized (workers) {
             if (workers.size() < coreSize) {
                 Worker worker = new Worker(task);
-                log.debug("新增 worker {}, {}", worker, task);
+                log.debug("新增线程 {}，处理任务 {}", worker, task);
                 workers.add(worker);
                 worker.start();
-            } else {
-                taskQueue.put(task);
+                return;
             }
+
+            taskQueue.offer(task, timeout, timeUnit);
         }
     }
 
-    /**
-     * 线程
-     */
     class Worker extends Thread {
-        /**
-         * 任务
-         */
         private Runnable task;
 
         public Worker(Runnable task) {
@@ -84,12 +93,9 @@ class ThreadPool {
 
         @Override
         public void run() {
-            // 执行任务
-            // 1）当task不为空，执行任务
-            // 2）当task为空，从任务队列获取任务执行
-            while(task != null || (task = taskQueue.take()) != null) {
+            while (task != null || (task = taskQueue.poll(timeout, timeUnit)) != null) {
                 try {
-                    log.debug("正在执行... {}", task);
+                    log.debug("正在执行...{}", task);
                     task.run();
                 } catch (Exception e) {
                     log.error(e.getMessage(), e);
@@ -99,15 +105,16 @@ class ThreadPool {
             }
 
             synchronized (workers) {
-                log.debug("worker 被移除了{}", this);
                 workers.remove(this);
             }
+
         }
     }
 }
 
 @Slf4j(topic = "c.BlockingQueue")
 class BlockingQueue<T> {
+
     /**
      * 任务队列
      */
@@ -124,9 +131,10 @@ class BlockingQueue<T> {
     private final Condition fullWaiting = lock.newCondition();
 
     /**
-     * 消费者条件变量
+     * 消费者
      */
     private final Condition emptyWaiting = lock.newCondition();
+
 
     /**
      * 容量
@@ -138,21 +146,51 @@ class BlockingQueue<T> {
     }
 
     /**
-     * 阻塞获取任务
+     * 带超时时间加入任务
      */
-    public T take() {
+    public void offer(T t, long timeout, TimeUnit unit) {
         lock.lock();
-
         try {
-            while (queue.isEmpty()) {
+            long nanos = unit.toNanos(timeout);
+            while (queue.size() == capacity) {
                 try {
-                    emptyWaiting.await();
+                    if (nanos <= 0) {
+                        return;
+                    }
+                    nanos = fullWaiting.awaitNanos(nanos);
                 } catch (InterruptedException e) {
                     log.error(e.getMessage(), e);
                 }
             }
-            T t = queue.removeLast();
-            log.debug("阻塞获取任务：{}", t);
+            queue.addLast(t);
+            log.debug("put {}", t);
+            emptyWaiting.signal();
+        } finally {
+            lock.unlock();
+        }
+    }
+
+    /**
+     * 带超时时间获取任务
+     */
+    public T poll(long timeout, TimeUnit timeUnit) {
+        lock.lock();
+
+        try {
+            long nanos = timeUnit.toNanos(timeout);
+
+            while (queue.isEmpty()) {
+                try {
+                    if (nanos <= 0) {
+                        return null;
+                    }
+                    nanos = emptyWaiting.awaitNanos(nanos);
+                } catch (InterruptedException e) {
+                    log.error(e.getMessage(), e);
+                }
+            }
+            T t = queue.removeFirst();
+            log.debug("take {}", t);
             fullWaiting.signal();
             return t;
         } finally {
@@ -161,29 +199,7 @@ class BlockingQueue<T> {
     }
 
     /**
-     * 阻塞添加任务
-     */
-    public void put(T t) {
-        lock.lock();
-
-        try {
-            while(queue.size() == capacity) {
-                try {
-                    fullWaiting.await();
-                } catch (InterruptedException e) {
-                    log.error(e.getMessage(), e);
-                }
-            }
-            queue.addFirst(t);
-            log.debug("阻塞加入任务队列：{}", t);
-            emptyWaiting.signal();
-        } finally {
-            lock.unlock();
-        }
-    }
-
-    /**
-     * 获取队列大小
+     * 任务队列大小
      */
     public int size() {
         lock.lock();

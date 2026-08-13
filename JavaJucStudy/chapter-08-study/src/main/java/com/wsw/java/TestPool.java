@@ -70,7 +70,7 @@ class ThreadPool {
     private final TimeUnit timeUnit;
 
     /* 6. 拒绝策略 */
-    private RejectPolicy<Runnable> rejectPolicy;
+    private final RejectPolicy<Runnable> rejectPolicy;
 
     public ThreadPool(
             int coreSize, long timeout, TimeUnit timeUnit, int queueCapacity, RejectPolicy<Runnable> rejectPolicy) {
