@@ -43,7 +43,6 @@ public class MethodRefTest {
 
         PrintStream out = System.out;
         Consumer<String> consumer2 = out :: println;
-
         consumer2.accept("Hello Java");
     }
 
@@ -52,14 +51,23 @@ public class MethodRefTest {
     * Employee中的String getName() */
     @Test
     public void test2() {
+        Employee jack = new Employee(1000L, "Jack", 34, 8000.42);
+        Supplier<String> supplier1 = new Supplier<>() {
+            @Override
+            public String get() {
+                return jack.getName();
+            }
+        };
+        System.out.println(supplier1.get());
+
         Employee jerry = new Employee(1001L, "Jerry", 34, 6000.38);
-        Supplier<String> supplier1 = () -> jerry.getName();
-        String s = supplier1.get();
+        Supplier<String> supplier2 = () -> jerry.getName();
+        String s = supplier2.get();
         System.out.println(s);
 
         Employee tom = new Employee(1002L, "Tom", 24, 4000.38);
-        Supplier<String> supplier2 = tom :: getName;
-        s = supplier2.get();
+        Supplier<String> supplier3 = tom :: getName;
+        s = supplier3.get();
         System.out.println(s);
     }
 
