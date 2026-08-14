@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configuration>
+<configuration scan="true" scanPeriod="30 seconds">
     <!-- Console ：表示当前的日志信息是可以输出到控制台的。 -->
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <!-- 输出流对象 默认System.out 改为 System.err -->
@@ -17,24 +17,6 @@
         </encoder>
     </appender>
 
-    <!-- File是输出的方向通向文件的 -->
-    <appender name="File" class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <encoder>
-            <pattern>[%-5level] %d{HH:mm:ss:SSS} [%thread] %logger{15} : %msg %n</pattern>
-            <charset>utf-8</charset>
-        </encoder>
-        <!--日志输出路径-->
-        <file>F:/Repositories/ZLog/wsw-data.log</file>
-        <!--指定日志文件拆分和压缩规则-->
-        <rollingPolicy
-                class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
-            <!--通过指定压缩文件名称，来确定分割文件方式-->
-            <fileNamePattern>F:/Repositories/ZLog/wsw-data-%i-%d{HH-mm-dd}-.log.gz</fileNamePattern>
-            <!--文件拆分大小-->
-            <maxFileSize>1MB</maxFileSize>
-        </rollingPolicy>
-    </appender>
-
     <!--
         1. 控制日志输出情况，如开启日志，取消日志
         2. level:用来设置打印级别，大小写无关：TRACE, DEBUG,
@@ -44,6 +26,5 @@
     -->
     <root level="DEBUG">
         <appender-ref ref="Console"/>
-        <!--<appender-ref ref="File"/>-->
     </root>
 </configuration>
