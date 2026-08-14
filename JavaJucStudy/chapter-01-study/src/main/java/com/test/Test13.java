@@ -1,4 +1,4 @@
-package com.wsw98;
+package com.test;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -9,8 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 2026/8/14 11:42
  * @since 1.0
  */
-@Slf4j(topic = "c.Test03")
-public class Test03 {
+@Slf4j(topic = "c.Test13")
+public class Test13 {
     public static void main(String[] args) throws InterruptedException {
         TwoPhaseTermination two = new TwoPhaseTermination();
         two.start();

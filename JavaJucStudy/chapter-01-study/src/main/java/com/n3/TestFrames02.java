@@ -1,4 +1,4 @@
-package com.wsw02.n3;
+package com.n3;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -7,11 +7,9 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 2025/9/21 10:12
  */
 @Slf4j
-public class BFrames02 {
+public class TestFrames02 {
     public static void main(String[] args) {
-        Thread t1 = new Thread(() -> {
-            method1(20);
-        }, "t1");
+        Thread t1 = new Thread(() -> method1(20), "t1");
         t1.start();
         method1(10);
     }

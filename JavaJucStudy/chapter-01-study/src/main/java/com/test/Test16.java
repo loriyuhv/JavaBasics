@@ -1,15 +1,16 @@
-package com.wsw98;
+package com.test;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * @author loriyuhv
- * @date 2025/9/22 11:53
- * @description 华罗庚 统筹方法：烧水泡茶
+ * 华罗庚 统筹方法：烧水泡茶
  * 线程1：洗水壶1分钟 ==> 烧开水 8分钟
  * 线程2：洗茶壶1分钟 ==> 洗茶杯1分钟 ==> 拿茶叶1分钟 ==> 泡茶2分钟
+ *
+ * @author loriyuhv
+ * @version 1.0 2025/9/22 11:53
  */
-@Slf4j
+@Slf4j(topic = "c.Test16")
 public class Test16 {
     public static void main(String[] args) throws InterruptedException {
         Thread jerry = new Thread(() -> {

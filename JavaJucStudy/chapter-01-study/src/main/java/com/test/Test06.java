@@ -1,4 +1,4 @@
-package com.wsw98;
+package com.test;
 
 import lombok.extern.slf4j.Slf4j;
 

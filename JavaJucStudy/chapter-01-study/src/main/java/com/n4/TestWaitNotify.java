@@ -1,4 +1,4 @@
-package com.wsw02.n4;
+package com.n4;
 
 import lombok.extern.slf4j.Slf4j;
 

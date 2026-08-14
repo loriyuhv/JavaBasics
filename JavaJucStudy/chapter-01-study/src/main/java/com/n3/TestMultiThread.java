@@ -1,14 +1,15 @@
-package com.wsw02.n3;
+package com.n3;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 演示多个线程并发交替执行
+ *
  * @author loriyuhv
- * @date 2025/9/20 22:02
- * @description 演示多个线程并发交替执行
+ * @version 1.0 2025/9/20 22:02
  */
-@Slf4j
-public class MultiThreadTest {
+@Slf4j(topic = "c.TestMultiThread")
+public class TestMultiThread {
     public static void main(String[] args) {
         new Thread(()->{
             while(true){

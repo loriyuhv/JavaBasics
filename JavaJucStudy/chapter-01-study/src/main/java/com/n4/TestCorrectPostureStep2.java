@@ -1,4 +1,4 @@
-package com.wsw02.n4;
+package com.n4;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -8,18 +8,22 @@ import lombok.extern.slf4j.Slf4j;
  * @description
  */
 @Slf4j
-public class TestCorrectPostureStep1 {
+public class TestCorrectPostureStep2 {
     static final Object room = new Object();
     static boolean isCigarette = false; // 是否有烟
     static boolean isTakeout = false;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         new Thread(() -> {
             synchronized (room) {
                 log.debug("小南有烟没？[{}]", isCigarette);
                 if (!isCigarette) {
                     log.debug("小南没烟，先歇会！");
-                    sleep(2);
+                    try {
+                        room.wait(2000);
+                    } catch (InterruptedException e) {
+                        log.error(e.getMessage());
+                    }
                 }
                 log.debug("小南有烟了没？[{}]", isCigarette);
                 if (isCigarette) {
@@ -36,21 +40,13 @@ public class TestCorrectPostureStep1 {
             }, "其他人" + i + 1).start();
         }
 
-        sleep(1);
+        Thread.sleep(1000);
         new Thread(() -> {
-            // 这里不能加synchronized
-            // synchronized (room) {
+            synchronized (room) {
                 isCigarette = true;
                 log.debug("烟送到了哦！");
-            // }
+                room.notify();
+            }
         }, "送烟的").start();
-    }
-
-    static void sleep(long timeout) {
-        try {
-            Thread.sleep(timeout * 1000);
-        } catch (InterruptedException e) {
-            log.error(e.getMessage());
-        }
     }
 }

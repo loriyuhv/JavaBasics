@@ -1,4 +1,4 @@
-package com.wsw98;
+package com.test;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -10,7 +10,7 @@ import java.util.concurrent.locks.LockSupport;
  * @author loriyuhv
  * @version 1.0 2025/9/21 14:56
  */
-@Slf4j
+@Slf4j(topic = "c.Test14")
 public class Test14 {
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {
