@@ -1,4 +1,4 @@
-package com.wsw.java;
+package com.wsw;
 
 /**
  * @author loriyuhv

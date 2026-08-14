@@ -1,4 +1,4 @@
-package com.wsw.java.exercise.test02;
+package com.wsw.exercise.test02;
 
 import lombok.extern.slf4j.Slf4j;
 
