@@ -3,11 +3,11 @@ package com.wsw98;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 调用sleep会让当前线程从Running状态进入Timed Waiting状态
  * @author loriyuhv
- * @date 2025/9/21 11:53
- * @description 调用sleep会让当前线程从Running状态进入Timed Waiting状态
+ * @version 1.0 2025/9/21 11:53
  */
-@Slf4j
+@Slf4j(topic = "c.Test06")
 public class Test06 {
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread("t1") {

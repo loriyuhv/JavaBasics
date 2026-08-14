@@ -5,11 +5,11 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * TimeUnit类
  * @author loriyuhv
- * @date 2025/9/21 12:04
- * @description TimeUnit类
+ * @version 1.0 2025/9/21 12:04
  */
-@Slf4j
+@Slf4j(topic = "c.Test08")
 public class Test08 {
     public static void main(String[] args) throws InterruptedException {
         log.debug("enter");

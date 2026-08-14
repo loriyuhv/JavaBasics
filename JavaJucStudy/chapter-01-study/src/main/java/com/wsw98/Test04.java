@@ -3,11 +3,11 @@ package com.wsw98;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * start vs run
  * @author loriyuhv
- * @date 2025/9/21 11:41
- * @description start vs run
+ * @version 1.0 2025/9/21 11:41
  */
-@Slf4j
+@Slf4j(topic = "c.Test04")
 public class Test04 {
     public static void main(String[] args) {
         Thread t1 = new Thread("t1") {

@@ -5,9 +5,10 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.concurrent.locks.LockSupport;
 
 /**
+ * interrupt 对park()的影响
+ *
  * @author loriyuhv
- * @date 2025/9/21 14:56
- * @description interrupt 对park()的影响
+ * @version 1.0 2025/9/21 14:56
  */
 @Slf4j
 public class Test14 {

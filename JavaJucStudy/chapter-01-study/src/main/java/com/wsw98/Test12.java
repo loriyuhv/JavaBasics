@@ -3,11 +3,12 @@ package com.wsw98;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * interrupt打断Runnable状态的线程
+ *
  * @author loriyuhv
- * @date 2025/9/21 13:28
- * @description interrupt打断Runnable状态的线程
+ * @version 1.0 2025/9/21 13:28
  */
-@Slf4j
+@Slf4j(topic = "c.Test12")
 public class Test12 {
     public static void main(String[] args) throws InterruptedException {
         Thread t1 = new Thread(() -> {
