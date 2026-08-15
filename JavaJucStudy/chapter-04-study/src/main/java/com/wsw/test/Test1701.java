@@ -1,4 +1,4 @@
-package com.test;
+package com.wsw.test;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -26,8 +26,8 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 2026/8/14 16:16
  * @since 1.0
  */
-@Slf4j(topic = "c.Test17")
-public class Test17 {
+@Slf4j(topic = "c.Test1701")
+public class Test1701 {
     static int count = 0;
 
     public static void main(String[] args) throws InterruptedException {

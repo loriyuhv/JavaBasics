@@ -1,17 +1,36 @@
-package com.test.test17;
+package com.wsw.test;
 
-import lombok.Getter;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * 优化Test1701
+ * 优化Test1703
+ * <p>synchronized加载成员方法上，锁住的是this对象</p>
+ * class Test {
+ *     public synchronized void test() {}
+ * }
+ * 等价
+ * class Test {
+ *     public void test() {
+ *         synchronized(this) {}
+ *     }
+ * }
+ * <p>synchronized加在静态方法上，锁住的是类对象</p>
+ * class Test {
+ *     public synchronized static void test() {}
+ * }
+ * 等价
+ * class Test {
+ *     public static void test() {
+ *         synchronized(Test.class) {}
+ *     }
+ * }
  *
  * @author loriyuhv
  * @version 1.0 2025/11/6 3:11
  * @since 1.0
  */
-@Slf4j
-public class Test1702 {
+@Slf4j(topic = "c.Test1704")
+public class Test1704 {
     public static void main(String[] args) throws InterruptedException {
         Room room = new Room();
 
@@ -36,7 +55,6 @@ public class Test1702 {
     }
 }
 
-@Getter
 class Room {
     private int counter = 0;
 
@@ -48,4 +66,7 @@ class Room {
         counter--;
     }
 
+    public synchronized int getCounter() {
+        return counter;
+    }
 }
