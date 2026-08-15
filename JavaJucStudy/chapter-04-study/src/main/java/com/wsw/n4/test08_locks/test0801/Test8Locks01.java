@@ -1,18 +1,18 @@
-package com.test.test08.test0802;
+package com.wsw.n4.test08_locks.test0801;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 线程八锁
- * 情况1：线程t1先获取锁，打印1，1秒后打印2
- * 情况2：线程t2先获取锁，打印2，1秒后打印1
+ * 情况1：打印12
+ * 情况2：打印21
  *
  * @author loriyuhv
  * @version 1.0 2025/9/22 14:20
  * @since 1.0
  */
-@Slf4j
-public class Test8Locks02 {
+@Slf4j(topic = "c.Test8Locks01")
+public class Test8Locks01 {
     public static void main(String[] args) {
         Number n1 = new Number();
         new Thread(() -> {
@@ -26,14 +26,9 @@ public class Test8Locks02 {
     }
 }
 
-@Slf4j
+@Slf4j(topic = "c.Number")
 class Number {
     public synchronized void a() {
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            log.error(e.getMessage());
-        }
         log.debug("1");
     }
 

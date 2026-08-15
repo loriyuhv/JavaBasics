@@ -1,45 +1,42 @@
-package com.test.test08.test0805;
+package com.wsw.n4.test08_locks.test0802;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * 线程八锁
- * 情况：先打印2，1秒后再打印1。
+ * 情况1：线程t1先获取锁，打印1，1秒后打印2
+ * 情况2：线程t2先获取锁，打印2，1秒后打印1
  *
  * @author loriyuhv
- * @version 1.0 2025/9/22 15:04
+ * @version 1.0 2025/9/22 14:20
  * @since 1.0
  */
-@Slf4j
-public class Test8Locks05 {
+@Slf4j(topic = "Test8Locks02")
+public class Test8Locks02 {
     public static void main(String[] args) {
         Number n1 = new Number();
-        new Thread(()->{
+        new Thread(() -> {
             log.debug("t1 begin");
-            // n1.a();
-            Number.a();
+            n1.a();
         }).start();
-
-        new Thread(()->{
+        new Thread(() -> {
             log.debug("t2 begin");
             n1.b();
         }).start();
     }
 }
 
-@Slf4j
+@Slf4j(topic = "c.Number")
 class Number {
-    /* 由于a方法是静态方法，所以锁对象是Number */
-    public static synchronized void a() {
+    public synchronized void a() {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            log.error(e.getMessage());
+            log.error(e.getMessage(), e);
         }
         log.debug("1");
     }
 
-    /* 由于b方法是普通方法，所以锁对象是this */
     public synchronized void b() {
         log.debug("2");
     }

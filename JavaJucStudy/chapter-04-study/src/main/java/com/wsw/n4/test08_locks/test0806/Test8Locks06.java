@@ -1,4 +1,4 @@
-package com.test.test08.test0806;
+package com.wsw.n4.test08_locks.test0806;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -11,7 +11,7 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 2025/9/22 15:04
  * @since 1.0
  */
-@Slf4j
+@Slf4j(topic = "c.Test8Locks06")
 public class Test8Locks06 {
     public static void main(String[] args) {
         // Number n1 = new Number();
@@ -30,7 +30,7 @@ public class Test8Locks06 {
     }
 }
 
-@Slf4j
+@Slf4j(topic = "c.Number")
 class Number {
     public static synchronized void a() {
         try {
