@@ -24,6 +24,11 @@ public class Employee {
         this.id = id;
     }
 
+    public Employee(Long id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (o == null || getClass() != o.getClass()) return false;

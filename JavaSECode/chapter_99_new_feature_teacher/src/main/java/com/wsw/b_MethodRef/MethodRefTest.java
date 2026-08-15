@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.PrintStream;
 import java.util.Comparator;
+import java.util.function.BiPredicate;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Supplier;
@@ -89,9 +90,10 @@ public class MethodRefTest {
 
     }
 
-    /*
-    * Function中的R apply(T t)
-    * Math中的Long round(Double d) */
+    /**
+     * Function中的R apply(T t)
+     * Math中的Long round(Double d)
+     */
     @Test
     public void test4() {
         Function<Double, Long> function1 = (a) -> Math.round(a);
@@ -104,10 +106,11 @@ public class MethodRefTest {
         System.out.println(apply2);
     }
 
-    /*情况3: 类 :: 实例方法
-    * Comparator中的int compare(T t1, T t2)
-    * String中的int t1.compareTo(t2)
-    *  */
+    /**
+     * 情况3: 类 :: 实例方法
+     * Comparator中的int compare(T t1, T t2)
+     * String中的int t1.compareTo(t2)
+     */
     @Test
     public void test5() {
         Comparator<String> comparator1 = (a, b) -> a.compareTo(b);
@@ -117,5 +120,30 @@ public class MethodRefTest {
         Comparator<String> comparator2 = String::compareTo;
         int compare2 = comparator2.compare("b", "a");
         System.out.println(compare2);
+    }
+
+    /**
+     * BiPredicate中boolean test(T t1, T t2);
+     * String 中 boolean t1.equals(t2);
+     */
+    @Test
+    public void test6() {
+        BiPredicate<String, String> pre1 = (a, b) -> a.equals(b);
+        System.out.println(pre1.test("a", "b"));
+
+        BiPredicate<String, String> pre2 =String::equals;
+        boolean test = pre2.test("Jerry", "Jerry");
+        System.out.println(test);
+    }
+
+    /**
+     * Function中的R apply(T t);
+     * Employee中的String getName();
+     */
+    @Test
+    public void test7() {
+        Function<Employee, String> fun = Employee::getName;
+        Employee jack = new Employee(1000L, "Jack", 34, 8000.4);
+        System.out.println(fun.apply(jack));
     }
 }
