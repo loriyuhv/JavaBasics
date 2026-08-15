@@ -1,4 +1,4 @@
-package com.exercise;
+package com.wsw.n4.exercise;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -15,7 +15,7 @@ import java.util.Vector;
  * @version 1.0 2025/11/6 9:11
  * @since 1.0
  */
-@Slf4j
+@Slf4j(topic = "c.ExerciseSell")
 public class ExerciseSell {
     /* 随机数，Random为线程安全 */
     static Random random = new Random();
@@ -66,6 +66,7 @@ public class ExerciseSell {
 }
 
 /* 售票窗口 */
+@Slf4j(topic = "c.TicketWindow")
 class TicketWindow {
     /* 余票数量 */
     private int count;

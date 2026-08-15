@@ -1,4 +1,4 @@
-package com.thread_safe.test03;
+package com.wsw.n4.test_thread_safe.test03;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,7 +29,11 @@ public class TestThreadSafe03 {
 }
 
 class ThreadSafe {
-    public void method01(int loopNumber) {
+    /**
+     * 加入final可以防止子类重写父类方法 或者public改成private
+     * @param loopNumber 循环次数
+     */
+    public final void method01(int loopNumber) {
         ArrayList<String> list = new ArrayList<>();
 
         for (int i = 0; i < loopNumber; i++) {

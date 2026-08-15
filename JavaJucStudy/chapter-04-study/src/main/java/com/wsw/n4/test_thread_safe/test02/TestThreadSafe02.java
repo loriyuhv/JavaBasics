@@ -1,4 +1,4 @@
-package com.thread_safe.test02;
+package com.wsw.n4.test_thread_safe.test02;
 
 import java.util.ArrayList;
 

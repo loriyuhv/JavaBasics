@@ -1,4 +1,4 @@
-package com.exercise;
+package com.wsw.n4.exercise;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,7 +14,7 @@ import java.util.Random;
  * @version 1.0 2025/11/7 13:46
  * @since 1.0
  */
-@Slf4j
+@Slf4j(topic = "c.ExerciseTransfer")
 public class ExerciseTransfer {
     static Random random = new Random();
 
@@ -46,10 +46,10 @@ public class ExerciseTransfer {
 }
 
 /* 账户 */
-@Slf4j
 @Setter
 @Getter
 @AllArgsConstructor
+@Slf4j(topic = "c.Account")
 class Account {
     private int money;
 
