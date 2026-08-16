@@ -26,7 +26,7 @@ import java.util.stream.Stream;
  * @version 1.0 2026/3/22 12:40
  * @since 1.0
  */
-public class StreamAPITest {
+public class TestStreamAPI01 {
     /**
      * 创建Stream方式一：通过集合
      */
