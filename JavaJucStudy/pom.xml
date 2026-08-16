@@ -22,7 +22,7 @@
         <junit-jupiter.version>5.13.4</junit-jupiter.version>
         <jol.version>0.17</jol.version>
         <lombok.version>1.18.38</lombok.version>
-        <logback.version>1.5.20</logback.version>
+        <logback.version>1.6.2</logback.version>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
