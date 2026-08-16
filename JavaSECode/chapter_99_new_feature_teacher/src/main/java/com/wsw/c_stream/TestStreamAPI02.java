@@ -100,4 +100,36 @@ public class TestStreamAPI02 {
         list1.addAll(list2);
         System.out.println(list1);
     }
+
+    /**
+     * 排序
+     */
+    @Test
+    public void test04() {
+        // sorted 产生一个新流，自然排序
+        List<Integer> list = Arrays.asList(1, 2, 1, 5, 8, 10, 3, 4, 32, 22, 1, 3, 2, 6);
+        list.stream().sorted().forEach(System.out::println);
+        System.out.println();
+
+        // 抛异常，原因：Employee类没有实现Comparable接口
+        // List<Employee> employees = EmployeeData.getEmployees();
+        // employees.stream().sorted().forEach(System.out::println);
+
+        // sorted(Comparator com) 定制排序
+        List<Employee> employees = EmployeeData.getEmployees();
+        // 比较年龄
+        // employees.stream().sorted(
+        //         Comparator.comparingInt(Employee::getAge)
+        // ).forEach(System.out::println);
+        // 年龄相等，比较薪资，薪资从高到低
+        employees.stream().sorted(
+                (e1, e2) -> {
+                    int compare = Integer.compare(e1.getAge(), e2.getAge());
+                    if (compare == 0) {
+                        return -Double.compare(e1.getSalary(), e2.getSalary());
+                    }
+                    return compare;
+                }
+        ).forEach(System.out::println);
+    }
 }
