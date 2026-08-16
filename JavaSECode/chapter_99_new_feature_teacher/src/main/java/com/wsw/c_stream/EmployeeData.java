@@ -14,6 +14,7 @@ public class EmployeeData {
 
         employees.add(new Employee(1001L, "Jerry", 34, 6000.38));
         employees.add(new Employee(1002L, "Tom", 24, 4000.38));
+        employees.add(new Employee(1003L, "Jack", 25, 8000.38));
 
         return employees;
     }
