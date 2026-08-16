@@ -4,10 +4,9 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author loriyuhv
- * @date 2025/9/24 17:47
- * @description
+ * @version 1.0 2025/9/24 17:47
  */
-@Slf4j
+@Slf4j(topic = "c.TestCorrectPostureStep2")
 public class TestCorrectPostureStep2 {
     static final Object room = new Object();
     static boolean isCigarette = false; // 是否有烟

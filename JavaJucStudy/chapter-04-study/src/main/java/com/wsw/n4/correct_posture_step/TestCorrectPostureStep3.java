@@ -3,11 +3,12 @@ package com.wsw.n4.correct_posture_step;
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 虚假唤醒一部分线程 notifyAll()
+ *
  * @author loriyuhv
- * @date 2025/9/24 17:47
- * @description 虚假唤醒一部分线程 notifyAll()
+ * @version 1.0 2025/9/24 17:47
  */
-@Slf4j
+@Slf4j(topic = "c.TestCorrectPostureStep3")
 public class TestCorrectPostureStep3 {
     static final Object room = new Object();
     static boolean isCigarette = false; // 是否有烟
