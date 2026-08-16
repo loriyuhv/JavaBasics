@@ -1,4 +1,4 @@
-package com.n4;
+package com.wsw.n4.correct_posture_step;
 
 import lombok.extern.slf4j.Slf4j;
 

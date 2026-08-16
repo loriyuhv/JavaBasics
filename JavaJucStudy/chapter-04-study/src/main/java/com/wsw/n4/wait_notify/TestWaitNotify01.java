@@ -1,4 +1,4 @@
-package com.wsw;
+package com.wsw.n4.wait_notify;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -9,8 +9,8 @@ import lombok.extern.slf4j.Slf4j;
  * @version 1.0 2025/10/6 7:20
  * @since 1.0
  */
-@Slf4j
-public class TestWaitNotify {
+@Slf4j(topic = "c.TestWitNotify")
+public class TestWaitNotify01 {
     final static Object lock = new Object();
 
     public static void main(String[] args) throws InterruptedException {
@@ -20,7 +20,7 @@ public class TestWaitNotify {
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
-                    log.debug(e.getMessage());
+                    log.debug(e.getMessage(), e);
                 }
                 log.debug("t1执行其他代码...");
             }

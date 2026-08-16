@@ -1,11 +1,10 @@
-package com.n4;
+package com.wsw.n4.correct_posture_step;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author loriyuhv
- * @date 2025/9/24 17:47
- * @description
+ * @version 1.0 2025/9/24 17:47
  */
 @Slf4j
 public class TestCorrectPostureStep1 {

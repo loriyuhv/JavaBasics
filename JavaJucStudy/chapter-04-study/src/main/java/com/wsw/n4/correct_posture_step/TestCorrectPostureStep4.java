@@ -1,14 +1,14 @@
-package com.n4;
+package com.wsw.n4.correct_posture_step;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author loriyuhv
  * @date 2025/9/24 17:47
- * @description 虚假唤醒一部分线程 notifyAll()
+ * @description 虚假唤醒
  */
 @Slf4j
-public class TestCorrectPostureStep3 {
+public class TestCorrectPostureStep4 {
     static final Object room = new Object();
     static boolean isCigarette = false; // 是否有烟
     static boolean isTakeout = false;
@@ -17,7 +17,9 @@ public class TestCorrectPostureStep3 {
         Thread t1 = new Thread(() -> {
             synchronized (room) {
                 log.debug("小南有烟没？[{}]", isCigarette);
-                if (!isCigarette) {
+                // if (!isCigarette) {
+                // 利用自旋解决部分唤醒问题
+                while (!isCigarette) {
                     log.debug("小南没烟，先歇会！");
                     try {
                         room.wait();
@@ -65,5 +67,13 @@ public class TestCorrectPostureStep3 {
                 room.notifyAll();
             }
         }, "送外卖的").start();
+
+        new Thread(() -> {
+            synchronized (room) {
+                isCigarette = true;
+                log.debug("烟送到了哦！");
+                room.notifyAll();
+            }
+        }, "送烟的").start();
     }
 }
