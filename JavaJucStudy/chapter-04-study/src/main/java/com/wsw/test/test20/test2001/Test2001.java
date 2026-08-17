@@ -8,19 +8,20 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * // 线程1等待线程2的下载结果
+ * 线程1等待线程2的下载结果
+ *
  * @author loriyuhv
  * @version 1.0 2026/8/16 15:31
  * @since 1.0
  */
 @Slf4j(topic = "c.Test2001")
 public class Test2001 {
-    private static GuardedObject guardedObject = new GuardedObject();
+    private static final GuardedObject<List<String>> guardedObject = new GuardedObject<>();
 
     public static void main(String[] args) {
         new Thread(() -> {
             log.debug("等待结果");
-            List<String> response = (List<String>) guardedObject.getResponse();
+            List<String> response = guardedObject.get();
             log.debug("结果大小：{}", response.size());
 
         }, "t1").start();
@@ -42,15 +43,15 @@ public class Test2001 {
 
 // 增加超时效果
 @Slf4j(topic = "c.GuardedObject")
-class GuardedObject {
+class GuardedObject<T> {
     // 结果
-    private Object response;
+    private T response;
 
     /**
      * 获取结果
      * @return 结果
      */
-    public synchronized Object getResponse() {
+    public synchronized T get() {
             // 没有结果
             while (response == null) {
                 try {
@@ -66,7 +67,7 @@ class GuardedObject {
      * 产生结果
      * @param response 结果
      */
-    public synchronized void complete(Object response) {
+    public synchronized void complete(T response) {
         // 给结果成员变量赋值
         this.response = response;
         this.notify();
