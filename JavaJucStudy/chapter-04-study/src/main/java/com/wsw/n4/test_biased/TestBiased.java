@@ -1,4 +1,4 @@
-package com.wsw.test;
+package com.wsw.n4.test_biased;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
