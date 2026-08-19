@@ -1,14 +1,15 @@
-package com.wsw99.test03;
+package com.wsw.n4.test_dead_lock.test01;
 
 import lombok.extern.slf4j.Slf4j;
 
 /**
+ * 线程活跃性——死锁
  * @author loriyuhv
- * @date 2025/9/21 15:43
- * @description
+ * @version 1.0 2026/8/18 13:40
+ * @since 1.0
  */
-@Slf4j
-public class DeadLockExample {
+@Slf4j(topic = "c.TestDeadLock")
+public class TestDeadLock {
     private static final Object resourceA = new Object();
     private static final Object resourceB = new Object();
 
@@ -47,7 +48,7 @@ public class DeadLockExample {
                 }
 
             }
-        }, "ThreadB");
+        }, "线程B");
 
         threadA.start();
         threadB.start();
