@@ -1,4 +1,4 @@
-package com.wsw.test;
+package com.wsw.test.test23;
 
 import com.wsw.util.Sleeper;
 import lombok.AllArgsConstructor;
