@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds">
+    <!-- Console ：表示当前的日志信息是可以输出到控制台的。 -->
+    <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- 输出流对象 默认System.out 改为 System.err -->
+        <target>System.out</target>
+        <!-- <encoder> -->
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <!--
+                格式化输出：%d表示日期 %thread表示线程名
+                %-5level：级别从左显示5个字符宽度
+                %logger:表示日志输出类，%logger{10}表示当输出类全名大于10个字符时，每一级包名只显示第一个字符。
+                %msg：表示日志内容。
+                %n：是换行符。
+            -->
+            <pattern>[%-5level] %blue(%d{HH:mm:ss.SSS}) %cyan([%thread]) %boldGreen(%logger{100}) : %msg %n</pattern>
+        </encoder>
+    </appender>
+
+    <!--
+        1. 控制日志输出情况，如开启日志，取消日志
+        2. level:用来设置打印级别，大小写无关：TRACE, DEBUG,
+            INFO, WARN, ERROR, ALL 和 OFF， 默认debug
+        3. <root>可以包含零个或多个<appender-ref>元素，标识这
+            个输出位置将会被本日志级别控制。
+    -->
+    <root level="DEBUG">
+        <appender-ref ref="Console"/>
+    </root>
+</configuration>
